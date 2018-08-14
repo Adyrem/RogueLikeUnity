@@ -2,27 +2,42 @@ Marc: Design
 Sam: UI
 Adrian / Flavio: Backend
 
+# Title: Lost edge
 
+## Technologies:
+C#
+Json for Upgrades and Enemies
+picture size: 32x32px
 
-
-
-RogueLike
-?Unity
-Turnbased
-?Quickplay reward
-
+## Game:
 Grid
-Rooms - big map
+Turnbased
 
+## Map:
+prototype floor 4x4
+
+### empty rooms:
+ - 
+ 
+Rooms - big map
 Difficulty: med
-Mob-amount: large
-(Items:
- - Yes/No
- - Amount
- - Type
-)
-(Theme:
+Upgrades
+
+## Enemies:
+Mob-count: large
+Floor boss
+
+## Theme:
  - Fantasy
  - Sci-fi
  - Dark
-)
+ - Eldritch
+
+## Zusatz:
+Quickplay reward
+Save game
+Different monsters
+more items
+Big Monsters: 2x2 for pictures 64x64
+
+
