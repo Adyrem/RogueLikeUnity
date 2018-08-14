@@ -16,8 +16,11 @@ Adrian / Flavio: Backend
 ## Map:
  - Rooms
  - Size: 5x5
+ 
+## Rooms:
  - Boss
  - Upgrades
+ - Presets
 
 ## Enemies:
 - Mob-count: large
@@ -36,3 +39,4 @@ Adrian / Flavio: Backend
 - Different monsters
 - more items
 - Big Monsters: 2x2 for pictures 64x64
+- empty rooms (no diagonally adjacent blocked rooms)
