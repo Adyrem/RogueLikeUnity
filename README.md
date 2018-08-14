@@ -13,6 +13,11 @@ Adrian / Flavio: Backend
 - Grid
 - Turnbased
 
+## Combat:
+ - Move: WASD
+ - Hit adjacent tiles (melee)
+ - Health
+
 ## Map:
  - Rooms
  - Size: 5x5
@@ -37,6 +42,6 @@ Adrian / Flavio: Backend
 - Quickplay reward
 - Save game
 - Different monsters
-- more items
+- more Upgrades
 - Big Monsters: 2x2 for pictures 64x64
 - empty rooms (no diagonally adjacent blocked rooms)
