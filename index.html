@@ -4,15 +4,17 @@
     <title>BeerDebt</title>
     <script>
 
-        function showname(){
-            document.write("asdfdfs");
+        var arr = ["Marc", "Flavio", "Adrian", " Samuel"];
+        async function showname(){
+            document.getElementById("show").innerText = arr[Math.random()*arr.length|0];
         }
     </script>
 </head>
 
 <body>
 
-<button onclick="showname()">asdf</button>
+<button id="btn" onclick="showname()" style="background: red; color: white; border-radius: 500px; width: 200px; height: 200px; font-size: 60px">test</button>
+<p id="show"></p>
 
 </body>
 
