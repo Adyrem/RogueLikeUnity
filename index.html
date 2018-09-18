@@ -9,11 +9,20 @@
     <script>
 
         var arr = ["Marc", "Flavio", "Adrian", " Samuel"];
-        async function showname(){
+        function showname(){
             document.getElementById("show").innerText = arr[Math.random()*arr.length|0];
+            document.getElementById("confirm").style.display = "flex";
         }
 
-        function myFunction() {
+        function mdown() {
+            document.getElementById("btn").style.background = "darkred";
+        }
+
+        function mup(){
+            document.getElementById("btn").style.background = "red";
+        }
+
+        function burger() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
                 x.className += " responsive";
@@ -29,13 +38,20 @@
 <div class="topnav" id="myTopnav">
     <a href="#home" class="active">Home</a>
     <a href="#users">Users</a>
-    <a class="icon" onclick="myFunction()">
+    <a class="icon" onclick="burger()">
         <i class="fa fa-bars"></i>
     </a>
 </div>
+<br style="height: 20px;">
+<div style="display:flex; flex-direction: column; align-items: center;">
+    <button id="btn" onclick="showname()" onmousedown="mdown()" onmouseup="mup()"></button>
+    <p id="show"></p>
+    <div id="confirm" style="display: none">
+        <button>OK</button>
+        <button>Cancel</button>
+    </div>
+</div>
 
-<button id="btn" onclick="showname()" style="background: red; color: white; border-radius: 500px; width: 200px; height: 200px; font-size: 60px">test</button>
-<p id="show"></p>
 
 </body>
 
