@@ -2,14 +2,17 @@
     <h1>Users</h1>
     <div id="userList">
         <?php
+        $user1 = new User('Jakobeli', 6, 7);
+        $user2 = new User('Hämpu', 8, 5);
+        $user3 = new User('Jakobeli', 7, 8);
 
-        $userArr = Array(
-            $user1 = "Hans Peter",
-            $user2 = "Kohan Kobeli",
-            $user1 = "Jimbob Queedudle"
+        $userArray = Array(
+            $user1,
+            $user2,
+            $user3
         );
 
-        foreach ($userArr as $user) {
+        foreach ($userArray as $user) {
             ?>
             <div id="singleUser">
                 <?php
