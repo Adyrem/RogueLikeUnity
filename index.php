@@ -45,7 +45,7 @@ if (isset($_GET['site']))
 
 <div class="topnav" id="myTopnav">
     <a href="./index.php?site=home" class="active">Home</a>
-    <a href="#user">Users</a>
+    <a href="./index.php?site=UserList">Users</a>
     <a onclick="logout()">Logout</a>
     <a class="icon" onclick="burger()">
         <i class="fa fa-bars"></i>
