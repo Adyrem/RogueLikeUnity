@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (isset($_GET['status']) && $_GET['status'] == "logout")
-{
+include "GLOBALS.php";
+if (isset($_GET['status']) && $_GET['status'] == "logout") {
     session_destroy();
     header("Location: index.php");
 }
@@ -22,13 +22,12 @@ if (isset($_GET['site']))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="main.css">
     <script>
-        function logout()
-        {
-            if(confirm("Ausloggen?"))
-            {
+        function logout() {
+            if (confirm("Ausloggen?")) {
                 window.location.href = "index.php?status=logout";
             }
         }
+
         function burger() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
@@ -58,7 +57,6 @@ if (isset($_SESSION['loggedIn'])) {
     include $_SESSION['site'] . ".php";
 } else {
     include "login.php";
-    $_SESSION['site'] = "login";
 }
 
 ?>
