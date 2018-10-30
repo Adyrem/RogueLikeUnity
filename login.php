@@ -9,11 +9,11 @@
 ?>
 
 <div class="content">
-    <br>
     <Form method="post">
         <label for="Password">Password</label>
-        <input name="Password" type="password">
         <br>
-        <button type="submit" >Submit</button>
+        <input name="Password" id="Password" type="password">
+        <br>
+        <button type="submit" style="margin-top: 50px;" >Submit</button>
     </Form>
 </div>
