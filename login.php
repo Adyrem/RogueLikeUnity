@@ -11,11 +11,9 @@
 <div class="content">
     <br>
     <Form method="post">
-
         <label for="Password">Password</label>
         <input name="Password" type="password">
         <br>
         <button type="submit" >Submit</button>
-
     </Form>
 </div>

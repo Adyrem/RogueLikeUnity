@@ -18,6 +18,7 @@
         document.getElementById("btn").style.marginTop = "0px";
     }
 
+
     function burger() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
