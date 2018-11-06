@@ -1,6 +1,7 @@
 <?php
+
 if (isset($_POST['Password'])) {
-    if ($_POST['Password'] == MASTERPW) {
+    if (password_verify($_POST['Password'],MASTERPW)) {
         $_SESSION['loggedIn'] = true;
         header("Location: index.php?site=home");
     }

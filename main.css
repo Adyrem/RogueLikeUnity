@@ -32,6 +32,12 @@ body {
     display: none;
 }
 
+#confirmSelection
+{
+    width: 25%;
+}
+
+/* add responsive stuff inside this */
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {
         display: none;
@@ -48,6 +54,11 @@ body {
 
     form {
         padding: 10px 10%;
+    }
+
+    #confirmSelection
+    {
+        width: 50%;
     }
 }
 
@@ -88,8 +99,11 @@ button
     border-radius: 5px;
     width: 100%;
     height: 25px;
+    margin: auto;
+    display: block;
 }
 
+/* div class for content anything that has to be centered */
 .content {
     display: flex;
     flex-direction: column;

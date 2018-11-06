@@ -1,13 +1,21 @@
 <?php
+
+/*
+ * This is the main site for the project
+ * It includes the nav, the links to stylesheets and anything else that has to be avaliable on every site
+ */
 session_start();
 include "GLOBALS.php";
+//logout function
 if (isset($_GET['status']) && $_GET['status'] == "logout") {
     session_destroy();
     header("Location: index.php");
 }
+//standard site if no site is set
 if (!isset($_SESSION['site'])) {
     $_SESSION['site'] = "home";
 }
+//get site from url "index.php?site=site"
 if (isset($_GET['site']))
     $_SESSION['site'] = $_GET['site'];
 ?>
@@ -53,6 +61,9 @@ if (isset($_GET['site']))
 
 <?php
 
+//the content gets included here
+
+//only get access to other sites if you're logged in
 if (isset($_SESSION['loggedIn'])) {
     include $_SESSION['site'] . ".php";
 } else {
