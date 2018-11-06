@@ -1,2 +1,2 @@
-Seppli-Peter,5,5
-Jim-Bob,10,1
+Seppli-Peter;5;5
+Jim-Bob;10;1

@@ -5,23 +5,27 @@
  * Date: 30.10.2018
  * Time: 15:48
  */
+require_once("User.php");
 
 class UserDAO
 {
     public $file = "data/users.txt";
 
     function readUsers(){
-        $userFile = fopen($this->file, "r") or die("Adi suck Dick");
+        $userFile = fopen($this->file, "r") or die(DEBUG);
         $users = array();
 
         while(($line = fgets($userFile)) != false){
             //TODO: Create User object and add to array
+            $userData = explode(";", $line);
+            $user = new User($userData[0],$userData[1],$userData[2]);
+            array_push($users, $user);
         }
-        echo fread($userFile, filesize($this->file));
+        echo json_encode($users);
         fclose($userFile);
     }
 
-    function addUser(){
+    function addUser($name){
 
     }
 
