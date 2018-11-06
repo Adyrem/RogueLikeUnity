@@ -2,6 +2,7 @@
     <h1>Users</h1>
     <div id="userList">
         <?php
+        require_once('User.php');
         $user1 = new User('Jakobeli', 6, 7);
         $user2 = new User('Hämpu', 8, 5);
         $user3 = new User('Jakobeli', 7, 8);
@@ -16,7 +17,7 @@
             ?>
             <div id="singleUser">
                 <?php
-                echo $user;
+                echo $user->name;
                 ?>
             </div>
 
