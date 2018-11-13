@@ -1,16 +1,17 @@
 <?php
 if (isset($_POST['Name'])) {
 
-    //DAO.addUser($_POST['Name']);
+    require_once("UserDAO.php");
+    $userDAO = new UserDAO();
+    $userDAO->addUser($_POST['Name']);
 
-    header("Location: index.php?site=home");
-
+    header("Location: index.php?site=UserList");
 }
 ?>
 
 <div class="content">
-    <Form method="post">
-        <label for="Name">Benutzername</label>
+    <Form method="post" class="bordered">
+        <label for="Name">Username</label>
         <br>
         <input name="Name" id="Name" type="text">
         <br>

@@ -9,7 +9,7 @@ if (isset($_POST['Password'])) {
 ?>
 
 <div class="content">
-    <Form method="post">
+    <Form method="post" class="bordered">
         <label for="Password">Password</label>
         <br>
         <input name="Password" id="Password" type="password">

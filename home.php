@@ -1,23 +1,41 @@
 <script>
 
-    var arr = ["Marc", "Flavio", "Adrian", " Samuel"];
+    <?php
+    require_once("UserDAO.php");
+    $userDAO = new UserDAO();
+
+    if (isset($_GET['name']))
+    {
+        $userDAO->addUser($_GET['name']);
+        header("Location: index.php?site=UserList");
+    }
+
+    $userArray = $userDAO->readUsers();
+    ?>
+
+    //all users to js array
+    var arr = <?php echo json_encode($userArray); ?>;
+
+
+    var counter = 0;
     //get next name
-    //not implemented yet
     function showname(){
-        document.getElementById("show").innerText = arr[Math.random()*arr.length|0];
+        document.getElementById("show").innerText = arr[counter].name;
+        counter = counter==arr.length-1?0:counter+1;
         document.getElementById("confirmSelection").style.display = "block";
+    }
+
+    function confirm() {
+        let name = document.getElementById("show").innerText;
+        location.href = "index.php?site=home&name=" + name;
     }
 
     //button animation
     function mdown() {
-        document.getElementById("bigBtn").style.boxShadow = "0px 0px darkred";
-        document.getElementById("bigBtn").style.marginBottom = "0px";
-        document.getElementById("bigBtn").style.marginTop = "10px";
+        document.getElementById("bigBtn").className = "down";
     }
     function mup(){
-        document.getElementById("bigBtn").style.boxShadow = "0px 10px darkred";
-        document.getElementById("bigBtn").style.marginBottom = "10px";
-        document.getElementById("bigBtn").style.marginTop = "0px";
+        document.getElementById("bigBtn").className = "up";
     }
 
 </script>
@@ -27,5 +45,5 @@
     <button id="bigBtn" onclick="showname()" onmousedown="mdown()" onmouseup="mup()"></button>
     <p id="show"></p>
     <!-- button is not displayed until big button is pressed -->
-    <button id="confirmSelection" style="display: none;">OK</button>
+    <button onclick="confirm()" id="confirmSelection" style="display: none;">OK</button>
 </div>

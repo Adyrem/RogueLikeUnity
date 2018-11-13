@@ -31,7 +31,7 @@ if (isset($_GET['site']))
     <link rel="stylesheet" href="main.css">
     <script>
         function logout() {
-            if (confirm("Ausloggen?")) {
+            if (confirm("Log out?")) {
                 window.location.href = "index.php?status=logout";
             }
         }

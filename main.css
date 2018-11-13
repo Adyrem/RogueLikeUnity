@@ -48,11 +48,15 @@ body {
         display: block;
     }
 
-    .content {
+    .content > form {
         width: 80% !important;
     }
 
-    form {
+    .content {
+        width: 100% !important;
+    }
+
+    .bordered {
         padding: 10px 10%;
     }
 
@@ -92,6 +96,18 @@ body {
     font-size: 60px;
 }
 
+#bigBtn.up{
+    box-shadow: 0 10px darkred;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+#bigBtn.down{
+    box-shadow: 0 0 darkred;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
 button
 {
     background-color: lightgreen;
@@ -113,14 +129,19 @@ button
     margin-top: 10px;
 }
 
-form {
+.bordered {
     border: 2px solid lightblue;
     border-radius: 10px;
     width: 100%;
-    padding: 10px 10% 20px 10%;
+    padding: 10px 10% 10px 10%;
 }
 
 form > *
 {
     width: 100%;
+}
+
+img {
+    width: 50px;
+    height: 50px;
 }
