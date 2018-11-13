@@ -14,10 +14,10 @@
     ?>
 
     //all users to js array
-    var arr = <?php echo json_encode($userArray); ?>;
+    let arr = <?php echo json_encode($userArray); ?>;
 
 
-    var counter = 0;
+    let counter = 0;
     //get next name
     function showname(){
         document.getElementById("show").innerText = arr[counter].name;
