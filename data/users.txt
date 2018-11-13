@@ -1,2 +1,3 @@
 Seppli-Peter;5;5
-Jim-Bob;10;1
+Jim-Bob-Joe;5;0
+Hans;0;0

@@ -9,30 +9,116 @@ require_once("User.php");
 
 class UserDAO
 {
+    /**
+     * @var string      The File where the users are saved
+     */
     public $file = "data/users.txt";
 
+    /**
+     * Reads all users saved in the file
+     * @return array    An array of all the users in the file
+     */
     function readUsers(){
         $userFile = fopen($this->file, "r") or die(DEBUG);
         $users = array();
 
         while(($line = fgets($userFile)) != false){
-            //TODO: Create User object and add to array
             $userData = explode(";", $line);
-            $user = new User($userData[0],$userData[1],$userData[2]);
+            $user = new User($userData[0],(int) $userData[1],(int) str_replace("\r\n", "", $userData[2]));
             array_push($users, $user);
         }
-        echo json_encode($users);
         fclose($userFile);
+        return $users;
+
     }
 
+    /**
+     * Adds a user to the file
+     * @param $name     The name of the user that will be added
+     */
     function addUser($name){
+        $users = $this->readUsers();
 
+        foreach ($users as $user){
+            if ($user->getName() == $name) {
+                echo "user exists";
+                return;
+            }
+        }
+
+        file_put_contents($this->file, $name.";0;0\r\n", FILE_APPEND);
     }
 
-    function deleteUser(){
+    /**
+     * Deletes a user from the file
+     * @param $name     The name of the user that will be deleted
+     */
+    function deleteUser($name){
+        $users = $this->readUsers();
+        foreach ($users as $user){
+            if($user->getName() == $name){
+                if(($userKey = array_search($user, $users)) !== false){
+                    echo $userKey . " ";
+                    unset($users[$userKey]);
+                }
+            }
+        }
 
+        $this->saveData($users, false);
+    }
+
+    /**
+     * Increases the BeerConsumed of all users by 1
+     * Increases the BeerPaid of the user that paid by 1
+     * @param $name     The name of the user that paid the last round
+     */
+    function addRound($name){
+        $users = $this->readUsers();
+        foreach ($users as $user){
+            if($user->getName() == $name){
+                $user->setBeerPaid($user->getBeerPaid() + 1);
+            }
+            $user->setBeerConsumed($user->getBeerConsumed() + 1);
+        }
+
+        $this->saveData($users, false);
+    }
+
+    /**
+     * Decreases the BeerConsumed of all users by 1
+     * Decreases the BeerPaid of the user that paid by 1
+     * @param $name     The name of the user that paid the last round
+     */
+    function deleteRound($name){
+        $users = $this->readUsers();
+        foreach ($users as $user){
+            if($user->getName() == $name){
+                $user->setBeerPaid($user->getBeerPaid() - 1);
+            }
+            $user->setBeerConsumed($user->getBeerConsumed() - 1);
+        }
+
+        $this->saveData($users, false);
+    }
+
+    /**
+     * Saves all given users into the file.
+     * Can append or overwrite
+     * @param $users    An array of all the users that will be written to the file
+     * @param $append   If the contents should be appended or if the file will be overwritten
+     */
+    function saveData($users, $append){
+        $fileString = "";
+        foreach ($users as $user){
+            $fileString = $fileString . $user->getName() . ";" . $user->getBeerConsumed() . ";" . $user->getBeerPaid() . "\r\n";
+        }
+        if($append){
+            file_put_contents($this->file, $fileString, FILE_APPEND);
+        } else {
+            file_put_contents($this->file, $fileString);
+        }
     }
 }
 
 $userdao = new UserDAO();
-$userdao->readUsers();
+$userdao->deleteRound("Hans");
