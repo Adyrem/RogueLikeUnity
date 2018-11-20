@@ -2,8 +2,8 @@
     <h1>Users</h1>
     <table>
         <tr>
-            <td><a href="index.php?site=UserList&func=download"><img src="data/download_arrow.jpg"></a></td>
-            <td><a href="index.php?site=adduser"><img src="data/add_user.jpg"></a></td>
+            <td><a class="icon" href="index.php?site=UserList&func=download"><i class="fa fa-download"></i></a></td>
+            <td><a class="icon" href="index.php?site=adduser"><i class="fa fa-plus"></i></a></td>
         </tr>
 </table>
 </div>
@@ -73,9 +73,9 @@
                 <td style="width: 100%">
                     <?php echo $name ?>
                 </td>
-                <td><a <?php echo 'href="index.php?site=UserList&func=add&name='.$name.'"'; ?>>add</a></td>
-                <td><a <?php echo 'href="index.php?site=UserList&func=remove&name='.$name.'"'; ?>>rem</a></td>
-                <td><a <?php echo 'href="index.php?site=UserList&func=confirmDel&name='.$name.'"'; ?>>del</td>
+                <td><a <?php echo 'href="index.php?site=UserList&func=add&name='.$name.'"'; ?>><i class="fa fa-plus"></i></a></td>
+                <td><a <?php echo 'href="index.php?site=UserList&func=remove&name='.$name.'"'; ?>><i class="fa fa-minus"></i></a></td>
+                <td><a <?php echo 'href="index.php?site=UserList&func=confirmDel&name='.$name.'"'; ?>><i class="fa fa-trash"></i></td>
             </tr>
             <tr>
                 <td>

@@ -141,7 +141,9 @@ form > *
     width: 100%;
 }
 
-img {
-    width: 50px;
-    height: 50px;
+/*class for download and add button in user list*/
+.icon {
+    font-size: 50px;
+    color: black;
+    justify-content: space-between;
 }
