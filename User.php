@@ -11,6 +11,7 @@ class User
     public $name;
     public $beerConsumed;
     public $beerPaid;
+    public $beerFactor;
 
     /**
      * User constructor.
@@ -23,6 +24,11 @@ class User
         $this->name = $name;
         $this->beerConsumed = $beerConsumed;
         $this->beerPaid = $beerPaid;
+        if($beerPaid != 0) {
+            $this->beerFactor = $this->beerConsumed / $this->beerPaid;
+        } else {
+            $this->beerFactor = $this->beerConsumed;
+        }
     }
 
     /**

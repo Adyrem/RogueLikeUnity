@@ -14,6 +14,9 @@ class UserDAO
      */
     public $file = "data/users.txt";
 
+    function sortData ($a, $b){
+        return $a->beerFactor < $b->beerFactor;
+    }
     /**
      * Reads all users saved in the file
      * @return array    An array of all the users in the file
@@ -28,6 +31,8 @@ class UserDAO
             array_push($users, $user);
         }
         fclose($userFile);
+
+        usort($users, array($this, "sortData"));
         return $users;
 
     }
@@ -118,7 +123,11 @@ class UserDAO
             file_put_contents($this->file, $fileString);
         }
     }
+
+
 }
 
-$userdao = new UserDAO();
-$userdao->deleteRound("Hans");
+$userDao = new UserDAO();
+echo json_encode($userDao->readUsers());
+
+
