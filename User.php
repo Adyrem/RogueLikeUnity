@@ -1,13 +1,18 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: vmadmin
- * Date: 30.10.2018
- * Time: 16:06
+ * This class represents a single user.
+ * All the data of one particular user is stored here during runtime.
  */
 
 class User
 {
+    /**
+     * @var $name           The name of the user.
+     * @var $beerConsumed   The amount of beer consumed by the user.
+     * @var $beerPaid       The amount of beer paid by the user.
+     * @var $beerFactor     The ratio between paid and consumed beers. This value is used to determine the user
+     *                      that pays the next round of beers. (beerConsumed / beerPaid)
+     */
     public $name;
     public $beerConsumed;
     public $beerPaid;
@@ -15,9 +20,9 @@ class User
 
     /**
      * User constructor.
-     * @param $name
-     * @param $beerConsumed
-     * @param $beerPaid
+     * @param $name             The name of the user.
+     * @param $beerConsumed     The amount of beers consumed by the user.
+     * @param $beerPaid         The amount of beers paid by the user.
      */
     public function __construct($name, $beerConsumed, $beerPaid)
     {
@@ -31,49 +36,31 @@ class User
         }
     }
 
-    /**
-     * @return mixed
-     */
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
     public function setName($name)
     {
         $this->name = $name;
     }
 
-    /**
-     * @return mixed
-     */
     public function getBeerConsumed()
     {
         return $this->beerConsumed;
     }
 
-    /**
-     * @param mixed $beerConsumed
-     */
     public function setBeerConsumed($beerConsumed)
     {
         $this->beerConsumed = $beerConsumed;
     }
 
-    /**
-     * @return mixed
-     */
     public function getBeerPaid()
     {
         return $this->beerPaid;
     }
 
-    /**
-     * @param mixed $beerPaid
-     */
     public function setBeerPaid($beerPaid)
     {
         $this->beerPaid = $beerPaid;
