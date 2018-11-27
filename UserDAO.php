@@ -9,7 +9,12 @@ require_once("User.php");
 
 class UserDAO
 {
-
+    /**
+     * Custom sorting function. Used in usort().
+     * @param $a        Value being compared.
+     * @param $b        Value being compared.
+     * @return bool     Result of comparison.
+     */
     function sortData ($a, $b){
         return $a->beerFactor < $b->beerFactor;
     }
