@@ -23,7 +23,7 @@ class UserDAO
      * @return array    An array of all the users in the file
      */
     function readUsers(){
-        $userFile = fopen(USERFILE, "r") or die(DEBUG);
+        $userFile = fopen(USERFILE, "r") or die(ERROR);
         $users = array();
 
         while(($line = fgets($userFile)) != false){
