@@ -1,3 +1,0 @@
-Seppli-Peter;10;10
-Jim-Bob-Joe;10;5
-Hans;10;0

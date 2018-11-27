@@ -21,7 +21,7 @@
             $userDAO->addRound($_GET['name']);
             header("Location: index.php?site=UserList");
         }
-        elseif ($func == "rem")
+        elseif ($func == "remove")
         {
             $userDAO->deleteRound($_GET['name']);
             header("Location: index.php?site=UserList");

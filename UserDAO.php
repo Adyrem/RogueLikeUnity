@@ -1,18 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: vmadmin
- * Date: 30.10.2018
- * Time: 15:48
+ *
+ * This class is used to manage the user data.
+ * Several methods for reading and writing user data to a text file are provided here.
+ * All user data is stored in a text file in the /data folder.
  */
 require_once("User.php");
 
 class UserDAO
 {
-    /**
-     * @var string      The File where the users are saved
-     */
-    public $file = "data/users.txt";
 
     function sortData ($a, $b){
         return $a->beerFactor < $b->beerFactor;
@@ -22,7 +18,7 @@ class UserDAO
      * @return array    An array of all the users in the file
      */
     function readUsers(){
-        $userFile = fopen($this->file, "r") or die(DEBUG);
+        $userFile = fopen(USERFILE, "r") or die(DEBUG);
         $users = array();
 
         while(($line = fgets($userFile)) != false){
@@ -51,7 +47,7 @@ class UserDAO
             }
         }
 
-        file_put_contents($this->file, $name.";0;0\r\n", FILE_APPEND);
+        file_put_contents(USERFILE, $name.";0;0\r\n", FILE_APPEND);
     }
 
     /**
@@ -118,16 +114,13 @@ class UserDAO
             $fileString = $fileString . $user->getName() . ";" . $user->getBeerConsumed() . ";" . $user->getBeerPaid() . "\r\n";
         }
         if($append){
-            file_put_contents($this->file, $fileString, FILE_APPEND);
+            file_put_contents(USERFILE, $fileString, FILE_APPEND);
         } else {
-            file_put_contents($this->file, $fileString);
+            file_put_contents(USERFILE, $fileString);
         }
     }
 
 
 }
-
-$userDao = new UserDAO();
-echo json_encode($userDao->readUsers());
 
 

@@ -147,3 +147,7 @@ form > *
     color: black;
     justify-content: space-between;
 }
+
+i {
+    color: black;
+}
