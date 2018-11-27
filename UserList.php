@@ -1,3 +1,13 @@
+<?php
+/**
+ * This site is the view for the Userlist
+ * It also includes a button for adding a user and downloading the users
+ * Every user has 3 buttons:
+ *  - add -> add a single round
+ *  - remove -> remove a single round
+ *  - delete -> delete this user
+ */
+?>
 <div class="content">
     <h1>Users</h1>
     <table>
@@ -73,9 +83,9 @@
                 <td style="width: 100%">
                     <?php echo $name ?>
                 </td>
-                <td><a <?php echo 'href="index.php?site=UserList&func=add&name='.$name.'"'; ?>><i class="fa fa-plus"></i></a></td>
-                <td><a <?php echo 'href="index.php?site=UserList&func=remove&name='.$name.'"'; ?>><i class="fa fa-minus"></i></a></td>
-                <td><a <?php echo 'href="index.php?site=UserList&func=confirmDel&name='.$name.'"'; ?>><i class="fa fa-trash"></i></td>
+                <td><a class="iconSmall" <?php echo 'href="index.php?site=UserList&func=add&name='.$name.'"'; ?>><i class="fa fa-plus"></i></a></td>
+                <td><a class="iconSmall" <?php echo 'href="index.php?site=UserList&func=remove&name='.$name.'"'; ?>><i class="fa fa-minus"></i></a></td>
+                <td><a class="iconSmall" <?php echo 'href="index.php?site=UserList&func=confirmDel&name='.$name.'"'; ?>><i class="fa fa-trash"></i></td>
             </tr>
             <tr>
                 <td>

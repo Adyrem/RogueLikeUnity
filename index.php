@@ -1,8 +1,12 @@
 <?php
 
-/*
+/**
  * This is the main site for the project
- * It includes the nav, the links to stylesheets and anything else that has to be avaliable on every site
+ * It includes the nav, the links to stylesheets and anything else that has to be avaliable on every site like the constants file
+ *
+ * The real main content gets included below the nav
+ *
+ * If needed it would be trivial to also add a footer
  */
 session_start();
 include "GLOBALS.php";
@@ -21,7 +25,7 @@ if (isset($_GET['site']))
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>BeerDebt</title>
 

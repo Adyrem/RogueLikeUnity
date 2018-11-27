@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Very basic login view
+ *
+ * We don't use usernames for the login, but only a global masterPW
+ * this PWHash is defined in GLOBALS.php
+ */
+
 if (isset($_POST['Password'])) {
     if (password_verify($_POST['Password'],MASTERPW)) {
         $_SESSION['loggedIn'] = true;

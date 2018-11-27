@@ -3,6 +3,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_topnav
+  The burgermenu has been heavily influenced by the above link
+*/
+
 .topnav {
     overflow: hidden;
     background-color: deepskyblue;
@@ -141,11 +145,15 @@ form > *
     width: 100%;
 }
 
-/*class for download and add button in user list*/
+/*classes for download and add button in user list*/
 .icon {
     font-size: 50px;
     color: black;
     justify-content: space-between;
+}
+
+.iconSmall{
+    color: black;
 }
 
 i {

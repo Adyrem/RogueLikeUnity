@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * This File is the view for adding a new user
+ * There are no site parameters
+ */
+
 if (isset($_POST['Name'])) {
 
     require_once("UserDAO.php");
