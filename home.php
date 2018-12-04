@@ -3,6 +3,14 @@
     <?php
 
     /**
+     * Version 1.0
+     * Created by Adrian Aeschlimann on 30.10.2018
+     *
+     * Version 1.1
+     * Edited by Adrian Aeschlimann on 27.11.2018
+     */
+
+    /**
      * This is the main feature site.
      *
      * It contains the Big Red Button (B.R.B.)

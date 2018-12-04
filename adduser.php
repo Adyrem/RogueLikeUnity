@@ -1,6 +1,14 @@
 <?php
 
 /**
+ * Version 1.0
+ * Created by Adrian Aeschlimann on 30.10.2018
+ *
+ * Version 1.1
+ * Edited by Adrian Aeschlimann on 13.11.2018
+ */
+
+/**
  * This File is the view for adding a new user
  * There are no site parameters
  */

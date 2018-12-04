@@ -1,6 +1,14 @@
 <?php
+
 /**
+ * Version 1.0
+ * Created by Flavio Lang on 30.10.2018
  *
+ * Version 1.1
+ * Edited by Flavio Lang on 27.11.2018
+ */
+
+/**
  * This class is used to manage the user data.
  * Several methods for reading and writing user data to a text file are provided here.
  * All user data is stored in a text file in the /data folder.

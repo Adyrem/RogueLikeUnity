@@ -1,6 +1,14 @@
 <?php
 
 /**
+ * Version 1.0
+ * Created by Adrian Aeschlimann on 30.10.2018
+ *
+ * Version 1.1
+ * Edited by Adrian Aeschlimann on 27.11.2018
+ */
+
+/**
  * This is the global constants file
  * The most important one is the password, which also has to change when implementing the Website
  */

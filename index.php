@@ -1,6 +1,14 @@
 <?php
 
 /**
+ * Version 1.0
+ * Created by Adrian Aeschlimann on 18.09.2018
+ *
+ * Version 1.1
+ * Edited by Adrian Aeschlimann on 13.11.2018
+ */
+
+/**
  * This is the main site for the project
  * It includes the nav, the links to stylesheets and anything else that has to be avaliable on every site like the constants file
  *

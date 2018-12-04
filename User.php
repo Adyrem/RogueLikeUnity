@@ -1,4 +1,13 @@
 <?php
+
+/**
+ * Version 1.0
+ * Created by Flavio Lang on 30.10.2018
+ *
+ * Version 1.1
+ * Edited by Flavio Lang on 27.11.2018
+ */
+
 /**
  * This class represents a single user.
  * All the data of one particular user is stored here during runtime.
